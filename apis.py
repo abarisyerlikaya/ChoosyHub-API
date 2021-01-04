@@ -25,7 +25,7 @@ class Products(Resource):
                             "number_of_reviews": 1, "number_of_comments": 1, "pictures": 1}
 
         if request.args.get("minPrice") is not None and request.args.get("maxPrice") is not None:
-            query["price"] = {"$gte": int(request.args.get("minPrice")), "$lte": int(request.args.get("maxPrice")) }
+            query["price"] = {"$gte": int(request.args.get("minPrice")), "$lte": int(request.args.get("maxPrice"))}
         elif request.args.get("minPrice") is not None:
             query["price"] = {"$gte": int(request.args.get("minPrice"))}
         elif request.args.get("maxPrice") is not None:
